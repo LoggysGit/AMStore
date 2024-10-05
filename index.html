@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="sources/_icon." />
+    <script src="script.js"></script>
+    <title>AMStore</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            transition: ease 0.2s;
+        }
+
+        body {
+            height: 100%;
+            background: linear-gradient(45deg, #7a68c7, #606397) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            background: linear-gradient(45deg, #7a51a8, #4b26a7);
+            padding: 10px 10px 10px 20px;
+            box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
+            font-weight: 500;
+            height: 50px !important;
+        }
+
+        #main-container {
+        }
+
+        #info {
+        }
+
+        #product-container {
+        }
+
+        .product {
+            background: linear-gradient(45deg, #7a51a8, #4b26a7);
+            box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
+            height: 28vh;
+            width: 13vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 20px;
+        }
+
+            .product * {
+                padding: 0 0 5px 0;
+            }
+
+            .product img {
+                height: 40%;
+            }
+
+            .product p {
+            }
+
+            .product button {
+                border: none;
+                background: #7a51a8C0;
+                height: 15%;
+                border-radius: 20px;
+            }
+
+                .product button:hover {
+                    background: #7a51a8;
+                    transform: scale(1.1, 1.1);
+                }
+
+        @media only screen and (max-width: 568px) {
+            .header {
+                background-color: #257965 !important;
+            }
+        }
+
+        @media screen and (max-width: 399px) {
+            header {
+                font-weight: 500;
+                font-size: 40px;
+                height: 65px !important;
+                color:blue;
+            }
+
+            .product {
+                height: 15vh;
+                width: 25vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        AM Store
+    </header>
+
+    <div id="main-container">
+        <div id="info">
+            <h1>Все, что хотите здесь!</h1>
+            <p>Выбирай то, что хочешь, отправляй заявку и в скором времени я передам тебе твой товар. Только не забудь деньги! :D 
+            Отказаться от своей заявки можно, написав на номер +77076034858, деньги передаем СТРОГО при встрече, т.к не гарантирую наличие товара</p>
+            <p>Свой номер вводить обязательно (формат - 77007007070)</p>
+            <input id="phone-input" type="number" min="1" value="77000000000" placeholder="Номер" />
+            <img src="info_img.png" alt="get started" />
+        </div>
+        <div id="product-container">
+
+            <div class="product">
+                <img src="" alt="product" />
+                <h1>Name</h1>
+                <div>
+                    <p>PriceT</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="sendMessage('Product.price')">Отправить заявку</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function sendMessage(mess) {
+            const phoneNum = document.getElementById("phone-input").value;
+            if (isValidPhoneNumber(phoneNum)) {
+                const botToken = '7825993060:AAHJc1ZXK8Y88Hztp3JQKcZJR7yaeyRDuvk';
+                const chatId = '5576471464';
+
+                message = `${mess} - ${phoneNum}`;
+
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.ok) {
+                            alert("Товар отправлен!");
+                        } else {
+                            alert("Ошибка отправки сообщения");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Ошибка:", error);
+                        alert(`ERROR: ${error}`);
+                    });
+            }
+            else {
+                alert("Номер не введен или введен неправильно");
+            }
+        }
+
+        function isValidPhoneNumber(phoneNum) {
+            // Регулярное выражение для проверки формата номера
+            const regex = /^7\d{10}$/;
+
+            // Проверка: номер не null и не пустая строка, а также соответствует регулярному выражению
+            if (phoneNum != null && phoneNum !== "" && regex.test(phoneNum)) {
+                return true; // Номер действителен
+            } else {
+                return false; // Номер недействителен
+            }
+        }
+    </script>
+</body>
+</html>
