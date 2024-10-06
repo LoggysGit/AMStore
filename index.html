@@ -38,9 +38,36 @@
         }
 
         #info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction:column;
+            text-align:center;
         }
 
         #product-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            --trans: 40%;
+            background: linear-gradient(45deg, rgba(122, 81, 168, var(--trans)), rgba(75, 38, 167, var(--trans)));
+            margin:30px;
+            padding:25px;
+            border:0;
+            border-radius:25px;
+        }
+
+        #confirm-menu {
+            position: fixed;
+            --trans: 70%;
+            background: linear-gradient(45deg, rgba(122, 81, 168, var(--trans)), rgba(75, 38, 167, var(--trans)));
+            width: 60%;
+            height: 60%;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
 
         .product {
@@ -116,6 +143,15 @@
         </div>
         <div id="product-container">
 
+            <div id="confirm-menu">
+                <h1>Подтвердите заявку</h1>
+                <p id="confirm-menu-p">Name, price</p>
+                <div>
+                    <button onclick="hideConfirmMenu(true)">ДА</button>
+                    <button onclick="hideConfirmMenu(false)">НЕТ</button>
+                </div>
+            </div>
+
             <div class="product">
                 <img src="" alt="product" />
                 <h1>Name</h1>
@@ -123,13 +159,23 @@
                     <p>PriceT</p>
                     <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
                 </div>
-                <button onclick="sendMessage('Product.price')">Отправить заявку</button>
+                <button onclick="showConfirmMenu('')">Отправить заявку</button>
             </div>
 
         </div>
     </div>
 
     <script>
+        const confirmMenu = document.getElementById("confirm-menu");
+        const confirmMenuProduct = document.getElementById("confirm-menu-p");
+        function showConfirmMenu(product) {
+            confirmMenuProduct.textContent = product;
+        }
+        function hideConfirmMenu(isBuy){
+            isBuy ? sendMessage(confirmMenuProduct.textContent) : hideConfirmMenu();
+            hideConfirmMenu();
+        }
+
         function sendMessage(mess) {
             const phoneNum = document.getElementById("phone-input").value;
             if (isValidPhoneNumber(phoneNum)) {
