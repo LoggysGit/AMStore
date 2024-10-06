@@ -67,14 +67,18 @@
             justify-content: center;
             --trans: 40%;
             background: linear-gradient(45deg, rgba(122, 81, 168, var(--trans)), rgba(75, 38, 167, var(--trans)));
-            margin:30px;
-            padding:25px;
-            border:0;
-            border-radius:25px;
+            margin: 30px;
+            padding: 25px;
+            border: 0;
+            border-radius: 25px;
+            flex-wrap: wrap;
         }
 
         #confirm-menu {
             position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             --trans: 70%;
             background: linear-gradient(45deg, rgba(122, 81, 168, var(--trans)), rgba(75, 38, 167, var(--trans)));
             width: 600px;
@@ -104,8 +108,8 @@
         .product {
             background: linear-gradient(45deg, #7a51a8, #4b26a7);
             box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
-            height: 200px;
-            width: 13vw;
+            height: 300px;
+            width: 360px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -113,17 +117,24 @@
             border: none;
             border-radius: 20px;
             padding:20px;
+            margin:15px;
         }
 
             .product * {
                 padding: 0 0 5px 0;
+                text-align:center;
             }
 
             .product img {
-                height: 40%;
+                height: 45%;
+                width: 58%;
+                border-radius: 20px;
+                box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
+                border: 0;
             }
 
-            .product p {
+            .product h1 {
+                font-size:20px;
             }
 
             .product button p {
@@ -145,6 +156,13 @@
                     background: #7a51a8;
                     transform: scale(1.1, 1.1);
                 }
+
+        #not {
+            background: linear-gradient(45deg, #7a51a850, #4b26a750);
+        }
+        #not button{
+            display:none;
+        }
 
         @media only screen and (max-width: 568px) {
             .header {
@@ -175,8 +193,10 @@
     <div id="main-container">
         <div id="info">
             <h1>Все, что хотите здесь!</h1>
-            <p>Выбирай то, что хочешь, отправляй заявку и в скором времени я передам тебе твой товар. Только не забудь деньги! :D 
-            Отказаться от своей заявки можно, написав на номер +77076034858, деньги передаем СТРОГО при встрече, т.к не гарантирую наличие товара</p>
+            <p>
+                Выбирай то, что хочешь, отправляй заявку и в скором времени я передам тебе твой товар. Только не забудь деньги! :D
+                Отказаться от своей заявки можно, написав на номер +77076034858, деньги передаем СТРОГО при встрече, т.к не гарантирую наличие товара
+            </p>
             <p>Свой ФИО и номер вводить обязательно (формат номера - 77007007070)</p>
             <div>
                 <input id="name-input" value="" placeholder="ФИО" />
@@ -189,56 +209,186 @@
             <div id="confirm-menu">
                 <h1>Подтвердите заявку</h1>
                 <p id="confirm-menu-p">Name, price</p>
+                <textarea id="dreams-input" placeholder="Пожелания (можно оставить пустым)" style="color:black;"></textarea>
                 <div style="width:80%; height:20%; display:flex; justify-content:center; align-items:center;">
                     <button onclick="hideConfirmMenu(true)">ДА</button>
                     <button onclick="hideConfirmMenu(false)">НЕТ</button>
                 </div>
             </div>
-            
-            <div class="product">
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAzAMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQcIBv/EAB0QAQAABgMAAAAAAAAAAAAAAAABBzd0scEDBAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9bIannXuOXLRGdyGp517jly0QAAAAARQQUABAUAAABFQAVAVFAAQByXNioft3GoOtIuSpsVD9u41AG5SGp517jly0Rnchqede45ctEBFiAJBQAAAAAAAAAABIqAIKAAAAAkXJU2Kh+3cag62clTYqH7dxqANxkNTzr3HLlojO5DU869xy5aIAAAAAAAAAAAAAAAAAAAAAAA5KmxUP27jUHWkXJU2Kh+3cagDcZDU869xy5aIzyQ1POvccuWiAAAAAIoAAAAAAAAAAAAAAAABFyVNioft3GoOtYuSpsVD9u41AG4SGp517jly0Rnkhqede45ctEAAAAAAAAAAAAAAAAAAAAAABIuSpsVD9u41B1rFyVNioft3GoA3KQ1POvccuWiM7kNTzr3HLlogAAAAAAAAAAAAAAAAAAAAAADkqbFQ/buNQdaRclTYqH7dxqANykNTzr3HLlojO5DU869xy5aIAAAAAAAAAAAAAAAAAACKigAAkXJU2Kh+3cag61clTYqH7dxqANykNTzr3HLlojO5DU869xy5aIAkFAAAAAAAAAAAAAAABABRAIKkFBHJc2Kh+3cag60i5KmxUP27jUAblIannXuOXLRGdyGp517jly0QAAAAAAAAAAAAAAAAAAAAAAEi5KmxUP27jUHWrkubFQ/buNQBuEhqede45ctEZ3IannXuOXLRAUEBQABFAAABAUAARQAAEAFEUAAEclzYqH7dxqDrRyXNioft3GoA3CQ1POvccuWiM8kNTzr3HLlogIoAAAAAAAIoAIoAAIoACKCKACKRBHJU2Kh+3cag61clzYqH7dxqANxkNTzr3HLlojO5DU869xy5aICKigAAAAAAAAAAigACAogCgAAgEXJU2Kh+3cag61clzYqH7dxqAP/Z" alt="product" />
-                <h1>Name</h1>
+
+            <div class="product" id="">
+                <img src="1.png" alt="product" />
+                <h1>Бумажные когти на чистой бумаге (5 шт)</h1>
                 <div>
-                    <p>PriceT</p>
+                    <p>50тг</p>
                     <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
                 </div>
-                <button onclick="showConfirmMenu('N.P')"><p>Отправить заявку</p></button>
+                <button onclick="showConfirmMenu('Бумажные когти на чистой бумаге (5 шт)')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="">
+                <img src="2.png" alt="product" />
+                <h1>Бумажные когти на использованной бумаге (5 шт)</h1>
+                <div>
+                    <p>30тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Бумажные когти на использованной бумаге (5 шт)')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="3.png" alt="product" />
+                <h1>Бумажный кубик большой чистый</h1>
+                <div>
+                    <p>60тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Бумажный кубик большой чистый')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="4.png" alt="product" />
+                <h1>Бумажный кубик маленький чистый</h1>
+                <div>
+                    <p>30тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Бумажный кубик маленький чистый')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="5.png" alt="product" />
+                <h1>Бумажный кубик большой на исп. бумаге</h1>
+                <div>
+                    <p>50тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Бумажный кубик большой на исп. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="6.png" alt="product" />
+                <h1>Бумажный кубик маленький на исп. бумаге</h1>
+                <div>
+                    <p>20тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Бумажный кубик маленький на исп. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="7.png" alt="product" />
+                <h1>Корона на чист. бумаге</h1>
+                <div>
+                    <p>100тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Корона на чист. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="8.png" alt="product" />
+                <h1>Корона на исп. бумаге</h1>
+                <div>
+                    <p>80тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Корона на исп. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="9.png" alt="product" />
+                <h1>Игрушка-антистресс на чист. бумаге</h1>
+                <div>
+                    <p>150тг</p>
+                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
+                </div>
+                <button onclick="showConfirmMenu('Игрушка-антистресс на чист. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="10.png" alt="product" />
+                <h1>Игрушка-антистресс на исп. бумаге</h1>
+                <div>
+                    <p>100тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Игрушка-антистресс на исп. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product">
+                <img src="11.png" alt="product" />
+                <h1>Очки на чист. бумаге</h1>
+                <div>
+                    <p>50тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Очки на чист. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="">
+                <img src="12.png" alt="product" />
+                <h1>Очки на исп. бумаге</h1>
+                <div>
+                    <p>30тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Очки на исп. бумаге')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="not">
+                <img src="13.png" alt="product" />
+                <h1>Антистресс на 3D принтере</h1>
+                <div>
+                    <p>150тг (отсутствует)</p>
+                </div>
+                <button onclick="showConfirmMenu('Очки на исп. бумаге')"><p>Отправить заявку</p></button>
             </div>
 
         </div>
     </div>
 
+    <!--
+        <div class="product">
+    <img src="" alt="product" />
+    <h1></h1>
+    <div>
+        <p></p>
+    </div>
+    <button onclick="//showConfirmMenu('N.P')"><p>Отправить заявку</p></button>
+    </div> -->
+
     <script>
         const confirmMenu = document.getElementById("confirm-menu");
         const confirmMenuProduct = document.getElementById("confirm-menu-p");
+        const dreams = document.getElementById("dreams-input");
         function showConfirmMenu(product) {
-            hideConfirmMenu(false);
+            //hideConfirmMenu(false);
             confirmMenuProduct.textContent = product;
             confirmMenu.style.display = "flex";
         }
-        function hideConfirmMenu(isBuy){
-            isBuy ? sendMessage(confirmMenuProduct.textContent) : confirmMenu.style.display="none";
+        function hideConfirmMenu(isBuy) {
+            isBuy ? sendMessage(confirmMenuProduct.textContent) : confirmMenu.style.display = "none";
             confirmMenu.style.display = "none";
         }
 
         function sendMessage(mess) {
             const phoneNum = document.getElementById("phone-input").value;
             const username = document.getElementById("name-input").value;
-            if (isValidPhoneNumber(phoneNum) || username != "") {
+            if (isValidPhoneNumber(phoneNum) && username != "") {
                 const botToken = '7825993060:AAHJc1ZXK8Y88Hztp3JQKcZJR7yaeyRDuvk';
                 const chatId = '5576471464';
 
-                message = `${mess}-${username}-${phoneNum}`;
+                message = `${mess} - ${username} - ${phoneNum} - ${dreams.value}`;
 
                 const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+                dreams.value = "";
 
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
                         if (data.ok) {
-                            alert("Товар отправлен!");
+                            alert("Заявка отправлена!");
                         } else {
-                            alert("Ошибка отправки сообщения");
+                            alert("Ошибка отправки");
                         }
                     })
                     .catch(error => {
