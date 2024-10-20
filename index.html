@@ -48,18 +48,20 @@
             margin: 20px;
             border-radius: 20px;
             -box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
-            padding:20px;
+            padding: 20px;
         }
-        #info input{
-            color:black;
-        }
-        #info img{
-                            border-radius: 25px;
+
+            #info input {
+                color: black;
+            }
+
+            #info img {
+                border-radius: 25px;
                 box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
-            height: 200px;
-            width:300px;
-            margin:30px;
-        }
+                height: 200px;
+                width: 300px;
+                margin: 30px;
+            }
 
         #product-container {
             display: flex;
@@ -90,20 +92,23 @@
             flex-direction: column;
             border-radius: 20px;
         }
-        #confirm-menu *{
-            margin:0 0 20px 0;
-        }
-        #confirm-menu button{
-            border:0;
-            border-radius: 20px;
-            width:44%;
-            height:50%;
-            margin:10px;
-            background:#b26dd6;
-        }
-         #confirm-menu button:hover{
-             background:#d8b0ed;
-         }
+
+            #confirm-menu * {
+                margin: 0 0 20px 0;
+            }
+
+            #confirm-menu button {
+                border: 0;
+                border-radius: 20px;
+                width: 44%;
+                height: 50%;
+                margin: 10px;
+                background: #b26dd6;
+            }
+
+                #confirm-menu button:hover {
+                    background: #d8b0ed;
+                }
 
         .product {
             background: linear-gradient(45deg, #7a51a8, #4b26a7);
@@ -116,13 +121,13 @@
             justify-content: center;
             border: none;
             border-radius: 20px;
-            padding:20px;
-            margin:15px;
+            padding: 20px;
+            margin: 15px;
         }
 
             .product * {
                 padding: 0 0 5px 0;
-                text-align:center;
+                text-align: center;
             }
 
             .product img {
@@ -134,25 +139,25 @@
             }
 
             .product h1 {
-                font-size:20px;
+                font-size: 20px;
             }
 
             .product button p {
-                padding:0;
+                padding: 0;
             }
 
-            .product button {
+            .product button, .okBtn {
                 border: none;
                 background: #7a51a8C0;
                 height: 15%;
-                width:80%;
+                width: 80%;
                 border-radius: 20px;
                 justify-content: center;
                 align-items: center;
                 text-align: center;
             }
 
-                .product button:hover {
+                .product button:hover, .okBtn {
                     background: #7a51a8;
                     transform: scale(1.1, 1.1);
                 }
@@ -160,9 +165,10 @@
         #not {
             background: linear-gradient(45deg, #7a51a850, #4b26a750);
         }
-        #not button{
-            display:none;
-        }
+
+            #not button {
+                display: none;
+            }
 
         @media only screen and (max-width: 568px) {
             .header {
@@ -175,7 +181,7 @@
                 font-weight: 500;
                 font-size: 40px;
                 height: 65px !important;
-                color:blue;
+                color: blue;
             }
 
             .product {
@@ -204,6 +210,7 @@
             </div>
             <!--img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjBzaG9wfGVufDB8fDB8fHww" alt="get started" /-->
         </div>
+        <h2 style="display:flex;align-items:center; justify-content:center;">Готовые продукты</h2>
         <div id="product-container">
 
             <div id="confirm-menu">
@@ -216,141 +223,88 @@
                 </div>
             </div>
 
-            <div class="product" id="">
+            <div class="product" id="no">
                 <img src="1.png" alt="product" />
-                <h1>Бумажные когти на чистой бумаге (5 шт)</h1>
-                <div>
-                    <p>50тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Бумажные когти на чистой бумаге (5 шт) - 50тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product" id="">
-                <img src="2.png" alt="product" />
-                <h1>Бумажные когти на использованной бумаге (5 шт)</h1>
-                <div>
-                    <p>30тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Бумажные когти на использованной бумаге (5 шт) - 30тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="3.png" alt="product" />
-                <h1>Бумажный кубик большой чистый</h1>
-                <div>
-                    <p>60тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Бумажный кубик большой чистый - 60тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="4.png" alt="product" />
-                <h1>Бумажный кубик маленький чистый</h1>
-                <div>
-                    <p>30тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Бумажный кубик маленький чистый - 30тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="5.png" alt="product" />
-                <h1>Бумажный кубик большой на исп. бумаге</h1>
-                <div>
-                    <p>50тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Бумажный кубик большой на исп. бумаге - 50тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="6.png" alt="product" />
-                <h1>Бумажный кубик маленький на исп. бумаге</h1>
-                <div>
-                    <p>20тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Бумажный кубик маленький на исп. бумаге - 20тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="7.png" alt="product" />
-                <h1>Корона на чист. бумаге</h1>
-                <div>
-                    <p>100тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Корона на чист. бумаге - 100тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="8.png" alt="product" />
-                <h1>Корона на исп. бумаге</h1>
-                <div>
-                    <p>80тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Корона на исп. бумаге - 80тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="9.png" alt="product" />
-                <h1>Игрушка-антистресс на чист. бумаге</h1>
-                <div>
-                    <p>150тг</p>
-                    <!--input type="number" min="1" value="1" placeholder="Кол-во" /-->
-                </div>
-                <button onclick="showConfirmMenu('Игрушка-антистресс на чист. бумаге - 150тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="10.png" alt="product" />
-                <h1>Игрушка-антистресс на исп. бумаге</h1>
-                <div>
-                    <p>100тг</p>
-                </div>
-                <button onclick="showConfirmMenu('Игрушка-антистресс на исп. бумаге - 100тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product">
-                <img src="11.png" alt="product" />
-                <h1>Очки на чист. бумаге</h1>
-                <div>
-                    <p>50тг</p>
-                </div>
-                <button onclick="showConfirmMenu('Очки на чист. бумаге - 50тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product" id="">
-                <img src="12.png" alt="product" />
-                <h1>Очки на исп. бумаге</h1>
-                <div>
-                    <p>30тг</p>
-                </div>
-                <button onclick="showConfirmMenu('Очки на исп. бумаге - 30тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product" id="not">
-                <img src="13.png" alt="product" />
-                <h1>Антистресс на 3D принтере</h1>
-                <div>
-                    <p>150тг (отсутствует)</p>
-                </div>
-                <button onclick="showConfirmMenu('Очки на исп. бумаге - 150тг')"><p>Отправить заявку</p></button>
-            </div>
-
-            <div class="product" id="not">
-                <img src="14.png" alt="product" />
                 <h1>Гриша</h1>
                 <div>
-                    <p>650тг (отсутствует)</p>
+                    <p>650тг</p>
                 </div>
                 <button onclick="showConfirmMenu('Гриша - 650тг')"><p>Отправить заявку</p></button>
             </div>
 
+            <div class="product" id="no">
+                <img src="2.png" alt="product" />
+                <h1>Сатору Годжо</h1>
+                <div>
+                    <p>1000тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Сатору Годжо - 1000тг')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="no">
+                <img src="3.png" alt="product" />
+                <h1>Воздушный спиннер</h1>
+                <div>
+                    <p>300тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Воздушный спиннер - 300тг')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="no">
+                <img src="4.png" alt="product" />
+                <h1>Фиджет кольцо</h1>
+                <div>
+                    <p>200тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Фиджет кольцо - 200тг')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="no">
+                <img src="5.png" alt="product" />
+                <h1>Кубик рубика скоростной</h1>
+                <div>
+                    <p>3000тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Кубик рубика - 3000тг')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="no">
+                <img src="6.png" alt="product" />
+                <h1>Хонсе</h1>
+                <div>
+                    <p>500тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Хонсе - 500тг')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="no">
+                <img src="7.png" alt="product" />
+                <h1>Акулка гибкая</h1>
+                <div>
+                    <p>250тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Акула - 250тг')"><p>Отправить заявку</p></button>
+            </div>
+
+            <div class="product" id="no">
+                <img src="8.png" alt="product" />
+                <h1>Светильник `Ядерный взрыв`</h1>
+                <div>
+                    <p>2500тг</p>
+                </div>
+                <button onclick="showConfirmMenu('Светильник `Ядерный взрыв` - 2500тг')"><p>Отправить заявку</p></button>
+            </div>
+
+        </div>
+
+        <h2 style="display:flex; align-items:center; justify-content:center;">Заказать</h2>
+        <div id="product-container">
+            <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <h1 style="display: flex; align-items: center; justify-content: center;">Заказать модель</h1>
+                <textarea id="order-inp" placeholder="Заказ..." style="color: black; width: 60vw; height: 30vh; margin: 10px;"></textarea>
+                <p>Позже я свяжусь с вами и озвучу стоимость</p>
+                <button class="okBtn" style="display: flex; height: 5vh; margin: 20px; " onclick="sendMessage(`${document.getElementById('order-inp').value}`)">ПОДТВЕРДИТЬ</button>
+            </div>
         </div>
     </div>
 
@@ -368,6 +322,9 @@
         const confirmMenu = document.getElementById("confirm-menu");
         const confirmMenuProduct = document.getElementById("confirm-menu-p");
         const dreams = document.getElementById("dreams-input");
+
+        const orderMenu = document.getElementById('order-inp');
+
         function showConfirmMenu(product) {
             //hideConfirmMenu(false);
             confirmMenuProduct.textContent = product;
@@ -381,10 +338,11 @@
         function sendMessage(mess) {
             const phoneNum = document.getElementById("phone-input").value;
             const username = document.getElementById("name-input").value;
-            if (isValidPhoneNumber(phoneNum) && username != "") {
+            if (isValidPhoneNumber(phoneNum) && username != "" && mess != "") {
                 const botToken = '7825993060:AAHJc1ZXK8Y88Hztp3JQKcZJR7yaeyRDuvk';
                 const chatId = '5576471464';
 
+                //(t == 0) ? message = `${mess} - ${username} - ${phoneNum} - ${dreams.value}` : message = `${orderMenu.value} - ${username} - ${phoneNum} - ${dreams.value}`
                 message = `${mess} - ${username} - ${phoneNum} - ${dreams.value}`;
 
                 const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
@@ -406,7 +364,7 @@
                     });
             }
             else {
-                alert("Име или номер не введен или введен неправильно");
+                alert("Что-то не введено");
             }
         }
 
